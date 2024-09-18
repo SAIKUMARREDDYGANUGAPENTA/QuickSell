@@ -137,7 +137,7 @@ const Kanban_Board = () => {
                         <button className="dropdown-btn" onClick={toggleDropdown}>
                             <img src="./icons/Display.svg" alt="icon" className="btn-icon" />
                             <p style={{ marginLeft: '10px', fontSize: '16px' }}>Display</p>
-                            <img src="./icons/Down_arrow.png" alt="icon"  style={{ width: '20px', height: '15px'}}/>
+                            <img src="./icons/Down_arrow.png" alt="icon"  style={{ width: '20px', height: '15px',marginLeft:'8px'}}/>
                         </button>
 
                         {dropdownOpen && (
