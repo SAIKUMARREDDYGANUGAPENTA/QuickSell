@@ -49,12 +49,12 @@ const Kanban_Board = () => {
     // Get priority icon
     const getPriorityIcon = (priority) => {
         switch (priority) {
-            case 0: return `${process.env.PUBLIC_URL}/icons/No_Priority.svg`;
+            case 0: return `${process.env.PUBLIC_URL}/icons/No_priority.png`;
             case 1: return `${process.env.PUBLIC_URL}/icons/Low_Priority.svg`;
             case 2: return `${process.env.PUBLIC_URL}/icons/Medium_Priority.svg`;
             case 3: return `${process.env.PUBLIC_URL}/icons/High_Priority.svg`;
             case 4: return `${process.env.PUBLIC_URL}/icons/Urgent_Priority_grey.svg`;
-            default: return `${process.env.PUBLIC_URL}/icons/No_Priority.svg`;
+            default: return `${process.env.PUBLIC_URL}/icons/No_priority.png`;
         }
     };
 
@@ -103,7 +103,7 @@ const Kanban_Board = () => {
     const getStatusIcon = (status) => {
         switch (status) {
             case 'Todo': return `${process.env.PUBLIC_URL}/icons/Todo.svg`;
-            case 'In progress': return `${process.env.PUBLIC_URL}/icons/in_Progress.svg`;
+            case 'In progress': return `${process.env.PUBLIC_URL}/icons/in_Progress_image.png`;
             case 'Backlog': return `${process.env.PUBLIC_URL}/icons/Backlog.svg`;
             case 'Done': return `${process.env.PUBLIC_URL}/icons/Done.svg`;
             case 'Cancelled': return `${process.env.PUBLIC_URL}/icons/Cancelled.svg`;
@@ -137,7 +137,7 @@ const Kanban_Board = () => {
                         <button className="dropdown-btn" onClick={toggleDropdown}>
                             <img src="./icons/Display.svg" alt="icon" className="btn-icon" />
                             <p style={{ marginLeft: '10px', fontSize: '16px' }}>Display</p>
-                            <img src="./icons/Down.svg" alt="icon" />
+                            <img src="./icons/Down_arrow.png" alt="icon"  style={{ width: '30px', height: '20px'}}/>
                         </button>
 
                         {dropdownOpen && (
@@ -146,7 +146,7 @@ const Kanban_Board = () => {
                                     <div className="dropdown-item">Grouping</div>
                                     <button className="dropdown-side-button" onClick={toggleStatusDropdown}>
                                         Status
-                                        <img src="./icons/Down.svg" alt="icon" className="icon-in-button" />
+                                        <img src="./icons/Down_arrow.png" alt="icon" className="icon-in-button" style={{ width: '30px', height: '20px'}}/>
                                     </button>
 
                                     {statusDropdownOpen && (
@@ -162,7 +162,7 @@ const Kanban_Board = () => {
                                     <div className="dropdown-item">Ordering</div>
                                     <button className="dropdown-side-button" onClick={togglePriorityDropdown}>
                                         Priority
-                                        <img src="./icons/Down.svg" alt="icon" />
+                                        <img src="./icons/Down_arrow.png" alt="icon" style={{ width: '30px', height: '20px'}}/>
                                     </button>
 
                                     {priorityDropdownOpen && (
@@ -183,7 +183,7 @@ const Kanban_Board = () => {
                     {['Backlog', 'Todo', 'In progress', 'Done', 'Cancelled'].map(status => (
                         <div key={status} className="column">
                             <h3 style={{ marginBottom: '20px' }}>
-                                <img src={getStatusIcon(status)} alt={status} />
+                                <img src={getStatusIcon(status)} alt={status}  style={{ width: '20px', height: '20px'}}/>
                                 <span style={{ marginLeft: '10px' }}>{status} ({getCardCount(status)})</span>
                                 <span style={{ marginLeft: '60px' }}>
                                     <img src={`${process.env.PUBLIC_URL}/icons/add.svg`} alt="Add" style={{ marginLeft: '10px', width: '20px', height: '20px' }} />
@@ -257,7 +257,7 @@ const Kanban_Board = () => {
                     {[0, 4, 3, 2, 1].map(priority => (
                         <div key={priority} className="column">
                             <h3 style={{ marginBottom: '20px' }}>
-                                <img src={getPriorityIcon(priority)} alt={`Priority ${priority}`} />
+                                <img src={getPriorityIcon(priority)} alt={`Priority ${priority}`} style={{ width: '15px', height: '15px' }}/>
                                 <span style={{ marginLeft: '10px' }}>
                                 {priority === 0 ? "No Priority" :
                                 priority === 4 ? "Urgent" :
