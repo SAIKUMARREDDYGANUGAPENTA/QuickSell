@@ -39,14 +39,14 @@ const Card = ({ id, title, feature, userName, priority, priorityIcon, status, ic
                 {id}
             </h4>
             <p className="card-title">
-                {iconUrl && <img src={iconUrl} alt={status} style={{ width: '15px', height: '15px', paddingRight: '4px' }} />}
+                {iconUrl && <img src={iconUrl} alt={status} style={{ width: '15px', height: '15px' }} />}
                 {truncateTitle(title, 6)}
             </p>
             <div className="footer">
                 <div className="left">
                     {priority != null && priorityIcon && (
                         <div className="priority-icon">
-                            <img src={priorityIcon} alt={`Priority: `} />
+                            <img src={priorityIcon} alt={`Priority: `} style={{ width: '15px', height: '15px' }}/>
                         </div>
                     )}
                     <div className="feature-container">
