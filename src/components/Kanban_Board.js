@@ -111,17 +111,22 @@ const Kanban_Board = () => {
         }
     };
 
-    // Handle sort change
-    const handleSortChange = (type) => {
-        setSortType(type);
-        setPriorityDropdownOpen(false); // Close dropdown after selection
-    };
+   
 
     // Handle display change
-    const handleDisplayChange = (displayType) => {
-        setSelectedDisplay(displayType);
-        setDropdownOpen(false); // Close the dropdown after selection
-    };
+            const handleDisplayChange = (e) => {
+                const displayType = e.target.value;
+                setSelectedDisplay(displayType);
+                setDropdownOpen(false); // Close the dropdown after selection
+            };
+
+            // Handle sort change
+            const handleSortChange = (e) => {
+                const type = e.target.value;
+                setSortType(type);
+                setPriorityDropdownOpen(false); // Close the dropdown after selection
+            };
+
 
     // const userColor = userName ? userColorMap[userName] || '#cccccc' : '#cccccc';
 
@@ -137,41 +142,28 @@ const Kanban_Board = () => {
                         <button className="dropdown-btn" onClick={toggleDropdown}>
                             <img src="./icons/Display.svg" alt="icon" className="btn-icon" />
                             <p style={{ marginLeft: '10px', fontSize: '16px' }}>Display</p>
-                            <img src="./icons/Down_arrow.png" alt="icon"  style={{ width: '20px', height: '15px',marginLeft:'8px'}}/>
+                            <img src="./icons/Down_arrow.png" alt="icon"  style={{ width: '20px', height: '15px' , marginLeft:'10px'}}/>
                         </button>
 
                         {dropdownOpen && (
                             <div className="dropdown-menu">
-                                <div className="dropdown-row">
-                                    <div className="dropdown-item">Grouping</div>
-                                    <button className="dropdown-side-button" onClick={toggleStatusDropdown}>
-                                        Status
-                                        <img src="./icons/Down_arrow.png" alt="icon" className="icon-in-button" style={{ width: '20px', height: '15px'}}/>
-                                    </button>
+                            <div className="dropdown-row">
+                                <label htmlFor="grouping-select" className="dropdown-item">Grouping</label>
+                                <select id="grouping-select" className="dropdown-select1" value={selectedDisplay} onChange={handleDisplayChange}>
+                                    <option value="status">Status</option>
+                                    <option value="user">User</option>
+                                    <option value="priority">Priority</option>
+                                </select>
+                            </div>
 
-                                    {statusDropdownOpen && (
-                                        <div className="dropdown-submenu1">
-                                            <div className="dropdown-item1" onClick={() => handleDisplayChange('status')}>Status</div>
-                                            <div className="dropdown-item1" onClick={() => handleDisplayChange('user')}>User</div>
-                                            <div className="dropdown-item1" onClick={() => handleDisplayChange('priority')}>Priority</div>
-                                        </div>
-                                    )}
-                                </div>
+                            <div className="dropdown-row">
+                                <label htmlFor="ordering-select" className="dropdown-item">Ordering</label>
+                                <select id="ordering-select" className="dropdown-select2" value={sortType} onChange={handleSortChange}>
+                                    <option value="title">Title</option>
+                                    <option value="priority">Priority</option>
+                                </select>
+                            </div>
 
-                                <div className="dropdown-row">
-                                    <div className="dropdown-item">Ordering</div>
-                                    <button className="dropdown-side-button" onClick={togglePriorityDropdown}>
-                                        Priority
-                                        <img src="./icons/Down_arrow.png" alt="icon" style={{ width: '20px', height: '15px'}}/>
-                                    </button>
-
-                                    {priorityDropdownOpen && (
-                                        <div className="dropdown-submenu2">
-                                            <div className="dropdown-item1" onClick={() => handleSortChange('priority')}>Priority</div>
-                                            <div className="dropdown-item1" onClick={() => handleSortChange('title')}>Title</div>
-                                        </div>
-                                    )}
-                                </div>
                             </div>
                         )}
                     </div>
