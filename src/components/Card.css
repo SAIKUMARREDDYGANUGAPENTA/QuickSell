@@ -1,0 +1,126 @@
+.card {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    max-width: 400px;
+  }
+  
+  .avatar-circle {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+
+  
+  .card-title {
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+    
+    margin: 5px;
+    
+
+  }
+
+  
+  .feature-circle {
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+
+  .priority-icon{
+    padding: 3px;
+    border-radius: 10%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin: 5px;
+    
+  }
+
+  .card .footer .left {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+  }
+  
+  .priority-icon {
+    margin-right: 10px; /* Add some space between the icon and the feature */
+  }
+  
+  .feature-circle {
+    width: 10px;
+    height: 10px;
+    /* background-color: #f0a500; */
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .feature {
+    font-size: 14px;
+    color: #333;
+    padding: 4px;
+    /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); */
+  }
+  
+
+  .feature-container {
+    display: flex;
+    align-items: center;
+  }
+  
+
+  .feature-container {
+    /* Add styles for the feature text */
+    /* font-size: 16px; */
+    padding: 2px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+
+  }
+
+
+  .avatar-status {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px; /* Size of the dot */
+    height: 10px; /* Size of the dot */
+    background-color: green; /* Dot color */
+    border-radius: 50%;
+    border: 2px solid #fff; /* Optional: adds a white border around the dot */
+}
+  

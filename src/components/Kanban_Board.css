@@ -1,0 +1,116 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container1, .container2, .container3 {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Five columns */
+    gap: 20px; /* Space between cards */
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.user-initials {
+    position: absolute;
+    top: -6px;
+    width: 40px;
+    height: 40px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+.dropdown-menu-user {
+    position: absolute;
+    top: 100%;
+    left: -85px;
+    margin-right: 100px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    width: 150px;
+    padding: 5px 0;
+}
+
+.dropdown-menu-user button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    text-align: left;
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dropdown-menu-user button:hover {
+    background-color: #f1f1f1;
+}
+
+.column {
+    position: relative;
+}
+
+@media (max-width: 1024px) {
+    .container1, .container2, .container3 {
+        grid-template-columns: repeat(3, 1fr); /* Three columns */
+    }
+}
+
+@media (max-width: 768px) {
+    .container1, .container2, .container3 {
+        grid-template-columns: repeat(2, 1fr); /* Two columns */
+    }
+}
+
+@media (max-width: 480px) {
+    .container1, .container2, .container3 {
+        grid-template-columns: 1fr; /* Single column */
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+    }
+
+    .column {
+        flex-direction: column; /* Stack elements vertically */
+        width: 100%;
+    }
+
+    h3 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
