@@ -137,7 +137,7 @@ const Kanban_Board = () => {
                         <button className="dropdown-btn" onClick={toggleDropdown}>
                             <img src="./icons/Display.svg" alt="icon" className="btn-icon" />
                             <p style={{ marginLeft: '10px', fontSize: '16px' }}>Display</p>
-                            <img src="./icons/Down_arrow.png" alt="icon"  style={{ width: '30px', height: '20px'}}/>
+                            <img src="./icons/Down_arrow.png" alt="icon"  style={{ width: '20px', height: '15px'}}/>
                         </button>
 
                         {dropdownOpen && (
@@ -146,7 +146,7 @@ const Kanban_Board = () => {
                                     <div className="dropdown-item">Grouping</div>
                                     <button className="dropdown-side-button" onClick={toggleStatusDropdown}>
                                         Status
-                                        <img src="./icons/Down_arrow.png" alt="icon" className="icon-in-button" style={{ width: '30px', height: '20px'}}/>
+                                        <img src="./icons/Down_arrow.png" alt="icon" className="icon-in-button" style={{ width: '20px', height: '15px'}}/>
                                     </button>
 
                                     {statusDropdownOpen && (
@@ -162,7 +162,7 @@ const Kanban_Board = () => {
                                     <div className="dropdown-item">Ordering</div>
                                     <button className="dropdown-side-button" onClick={togglePriorityDropdown}>
                                         Priority
-                                        <img src="./icons/Down_arrow.png" alt="icon" style={{ width: '30px', height: '20px'}}/>
+                                        <img src="./icons/Down_arrow.png" alt="icon" style={{ width: '20px', height: '15px'}}/>
                                     </button>
 
                                     {priorityDropdownOpen && (
